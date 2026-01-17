@@ -29,11 +29,11 @@ body {
 
 .wrapper .container {
   box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
-  padding: 30px;
+  padding: 5px 30px;
   height: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   border-radius: 10px;
   max-width: 500px;
   width: 100%;
@@ -43,6 +43,7 @@ body {
 
 .container h1 {
   font-size: 45px;
+  font-size: clamp(1rem, 45px, 12vw);
   font-weight: 500;
   border-bottom: var(--border);
   padding-bottom: 10px;
@@ -90,4 +91,12 @@ button:hover {
 button:active {
   transform: translateY(3px);
   box-shadow: var(--box-shadow-100);
+}
+
+/* media query; */
+@media screen and (width < 500px) {
+  .wrapper .container {
+    box-shadow: none;
+    padding: 5px 10px;
+  }
 }
