@@ -5,28 +5,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chronometer</title>
+    <!-- Css -->
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <div class="wrapper">
-      <div class="container">
+      <main class="container">
         <!-- Heading -->
         <h1>Chronometer</h1>
 
         <!-- Durations; -->
-        <p>
-          <span id="seconds">00</span>
+        <div class="durations-wrapper">
+          <time id="seconds">00</time>
           :
-          <span id="milli-seconds">00</span>
-        </p>
+          <time id="milli-seconds">00</time>
+        </div>
 
         <!-- Buttons -->
-        <div class="btn-wrapper">
+        <footer class="btn-wrapper">
           <button id="button-start">Start</button>
           <button id="button-pause">Pause</button>
           <button id="button-restart">Restart</button>
-        </div>
-      </div>
+        </footer>
+      </main>
     </div>
   </body>
 </html>
