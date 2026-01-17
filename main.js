@@ -5,6 +5,7 @@ window.onload = function () {
   const appendSeconds = document.getElementById("seconds");
   const buttonStart = document.getElementById("button-start");
   const buttonsPause = document.getElementById("button-pause");
+  const buttonRestart = document.getElementById("button-restart");
 
   let seconds = "00";
   let milliSeconds = "00";
@@ -38,5 +39,13 @@ window.onload = function () {
 
   buttonsPause.addEventListener("click", () => {
     clearInterval(Interval);
+  });
+
+  buttonRestart.addEventListener("click", () => {
+    clearInterval(Interval);
+    milliSeconds = "00";
+    seconds = "00";
+    appendMilliseonds.innerHTML = milliSeconds;
+    appendSeconds.innerHTML = seconds;
   });
 };

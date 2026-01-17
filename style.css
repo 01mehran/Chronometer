@@ -65,6 +65,10 @@ body {
   color: var(--white);
   box-shadow: var(--box-shadow-100);
 }
+.container .durations-wrapper time {
+  width: 100%;
+  text-align: center;
+}
 
 .btn-wrapper {
   display: flex;
