@@ -3,12 +3,15 @@
 window.onload = function () {
   const appendMilliseonds = document.getElementById("milli-seconds");
   const appendSeconds = document.getElementById("seconds");
+  const appendMinutes = document.getElementById("minutes");
+
   const buttonStart = document.getElementById("button-start");
   const buttonsPause = document.getElementById("button-pause");
   const buttonRestart = document.getElementById("button-restart");
 
   let seconds = "00";
   let milliSeconds = "00";
+  let minutes = "00";
   let Interval;
 
   function startTimer() {
@@ -22,13 +25,23 @@ window.onload = function () {
 
     if (milliSeconds > 99) {
       seconds++;
-      appendSeconds.innerHTML = `0${seconds}`;
+      appendSeconds.innerHTML = seconds <= 9 ? `0${seconds}` : seconds;
       milliSeconds = 0;
       appendMilliseonds.innerHTML = "0" + 0;
     }
 
     if (seconds > 9) {
       appendSeconds.innerHTML = seconds;
+    }
+
+    if (seconds > 59) {
+      minutes++;
+      appendMinutes.innerHTML = minutes <= 9 ? `0${minutes}` : minutes;
+      milliSeconds = 0;
+      seconds = 0;
+
+      appendMilliseonds.innerHTML = "0" + 0;
+      appendSeconds.innerHTML = "0" + 0;
     }
   }
 
