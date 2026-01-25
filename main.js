@@ -9,39 +9,31 @@ window.onload = function () {
   const buttonsPause = document.getElementById("button-pause");
   const buttonRestart = document.getElementById("button-restart");
 
-  let seconds = "00";
-  let milliSeconds = "00";
-  let minutes = "00";
-  let Interval;
+  let milliSeconds = 0;
+  let seconds = 0;
+  let minutes = 0;
+  let Interval = null;
 
   function startTimer() {
     milliSeconds++;
 
-    milliSeconds = milliSeconds <= 9 ? `0${milliSeconds}` : milliSeconds;
-
-    if (milliSeconds > 9) {
-      appendMilliseonds.innerHTML = milliSeconds;
-    }
+    appendMilliseonds.innerHTML =
+      milliSeconds < 10 ? `0${milliSeconds}` : milliSeconds;
 
     if (milliSeconds > 99) {
-      seconds++;
-      appendSeconds.innerHTML = seconds <= 9 ? `0${seconds}` : seconds;
       milliSeconds = 0;
-      appendMilliseonds.innerHTML = "0" + 0;
-    }
+      seconds++;
 
-    if (seconds > 9) {
-      appendSeconds.innerHTML = seconds;
+      appendMilliseonds.innerHTML = "00";
+      appendSeconds.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
     }
 
     if (seconds > 59) {
-      minutes++;
-      appendMinutes.innerHTML = minutes <= 9 ? `0${minutes}` : minutes;
-      milliSeconds = 0;
       seconds = 0;
+      minutes++;
 
-      appendMilliseonds.innerHTML = "0" + 0;
-      appendSeconds.innerHTML = "0" + 0;
+      appendSeconds.innerHTML = "00";
+      appendMinutes.innerHTML = minutes < 10 ? `0${minutes}` : minutes;
     }
   }
 
@@ -56,9 +48,13 @@ window.onload = function () {
 
   buttonRestart.addEventListener("click", () => {
     clearInterval(Interval);
-    milliSeconds = "00";
-    seconds = "00";
-    appendMilliseonds.innerHTML = milliSeconds;
-    appendSeconds.innerHTML = seconds;
+
+    milliSeconds = 0;
+    seconds = 0;
+    minutes = 0;
+
+    appendMilliseonds.innerHTML = "00";
+    appendSeconds.innerHTML = "00";
+    appendMinutes.innerHTML = "00";
   });
 };
