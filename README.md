@@ -24,6 +24,10 @@ A simple and elegant Cronometer (stopwatch) built with HTML, CSS, and JavaScript
 
 - ✅ Easy to Customize: Well-structured and commented code
 
+## 🌐 Live Demo
+
+[view live demo](https://01mehran.github.io/Chronometer/)
+
 ---
 
 ### ⚙️ installation
